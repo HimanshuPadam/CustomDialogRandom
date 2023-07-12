@@ -15,8 +15,6 @@ class MainActivity : AppCompatActivity() {
 
     var outName : String ?= ""
 
-    var outRollNo: Int?=0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,8 +37,8 @@ class MainActivity : AppCompatActivity() {
                 } else if (etRollNo.text.toString().isNullOrEmpty()) {
                     etRollNo.error="Please Enter your Roll No"
                 } else {
-                    binding.tvName.text = etName.text.toString()
-                    binding.tvRollNo.text = etRollNo.text.toString()
+                    binding.etNameMain.text = etName.text
+                    binding.etRollNoMain.text = etRollNo.text
 
                     dialog.dismiss()
 
@@ -56,8 +54,8 @@ class MainActivity : AppCompatActivity() {
             alert.setCancelable(false)
             alert.setPositiveButton("Yes") { _, _ ->
                 Toast.makeText(this, "Deleted successfully", Toast.LENGTH_SHORT).show()
-                binding.tvName.text = null
-                binding.tvRollNo.text = null
+                binding.etNameMain.text = null
+                binding.etRollNoMain.text = null
             }
             alert.setNegativeButton("No"){ _, _ ->
                 Toast.makeText(this,"Not Deleted",Toast.LENGTH_SHORT).show()
@@ -77,21 +75,21 @@ class MainActivity : AppCompatActivity() {
                        var random = ('A'..'Z').random()
                        outName+=random
                     }
-                    binding.tvName.text=outName
+                    binding.etNameMain.setText(outName)
                 }
 
             alert.setNegativeButton("Add 4"){_,_->
                     Toast.makeText(this,"Added successfully",Toast.LENGTH_SHORT).show()
                     for(i in 0..3){
                         var random = ('A'..'Z').random()
-                        outName+=random
+                        outName+=random.toString()
                     }
-                    binding.tvName.text=outName
+                    binding.etNameMain.setText(outName)
                 }
             alert.setNeutralButton("Clear"){_,_->
                     Toast.makeText(this,"Cleared successfully",Toast.LENGTH_SHORT).show()
                         outName=""
-                    binding.tvName.text=outName
+                    binding.etNameMain.setText(outName)
                 }
             alert.show()
         }
@@ -103,17 +101,17 @@ class MainActivity : AppCompatActivity() {
             alert.setPositiveButton("3 digit"){_, _->
                 Toast.makeText(this,"Added successfully",Toast.LENGTH_SHORT).show()
                     var random = (100..999).random()
-                binding.tvRollNo.text=random.toString()
+                binding.etRollNoMain.setText(random.toString())
             }
 
             alert.setNegativeButton("4 digit"){_,_->
                 Toast.makeText(this,"Added successfully",Toast.LENGTH_SHORT).show()
                 var random = (1000..9999).random()
-                binding.tvRollNo.text=random.toString()
+                binding.etRollNoMain.setText(random.toString())
             }
             alert.setNeutralButton("Clear"){_,_->
                 Toast.makeText(this,"Cleared successfully",Toast.LENGTH_SHORT).show()
-                binding.tvRollNo.text=null
+                binding.etRollNoMain.text=null
             }
             alert.show()
         }

@@ -14,27 +14,27 @@
         android:id="@+id/guide_h_20"
         />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guide_h_20"
-        android:id="@+id/tvName"
+        android:id="@+id/etNameMain"
         android:textSize="30sp"
-        android:text="Name"
+        android:hint="Name"
         />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/etNameMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Roll No"
+        android:hint="Roll No"
         android:textSize="30sp"
         android:layout_marginTop="10sp"
-        android:id="@+id/tvRollNo"
+        android:id="@+id/etRollNoMain"
         />
 
     <Button
@@ -44,7 +44,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRollNo"
+        app:layout_constraintTop_toBottomOf="@+id/etRollNoMain"
         android:layout_marginTop="10sp"
         android:id="@+id/btnUpdate"
         />
