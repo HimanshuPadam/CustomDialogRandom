@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".2"
-        android:id="@+id/guide_h_20"
+        app:layout_constraintGuide_percent=".1"
+        android:id="@+id/guide_h_10"
         />
 
     <EditText
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guide_h_20"
+        app:layout_constraintTop_toBottomOf="@+id/guide_h_10"
         android:id="@+id/etNameMain"
         android:textSize="30sp"
         android:hint="Name"
